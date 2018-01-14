@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      .out {
+        width:400px;
+        height:400px;
+        background-color: yellow;
+
+        /* first */
+        position:relative;
+      }
+      .in {
+        width:100px;
+        height:100px;
+        background-color: green;
+
+        /* second */
+        position:absolute;
+
+        /* third - allows the box to have the top left cornder in the center */
+        top:50%;
+        left:50%;
+
+        /* fourth - Adjust */
+        transform:translate(-50%, -50%);
+      }
+    </style>
+    <title>title</title>
+  </head>
+  <body>
+    <div class="out">
+      <div class="in">
+      </div>
+    </div>
+  </body>
+</html>

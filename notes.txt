@@ -1,0 +1,95 @@
+1. What is box model?
+
+A box that wraps around every single html element/content
+Has first the width and height then the padding, border, margin
+
+2. What is specificity?
+
+A set of rules to determine which CSS style to use if there are conflicting styles
+Main Rules:
+
+      1. Same element tag but conflicting styles would pick the last one
+        <div>Name</div>
+        div {
+          background-color:green;
+        }
+
+        div {
+          background-color:red; // uses this
+        }
+
+      2. If there is class name, then it is more specific than a non named div and uses that style
+
+      <div class='name'>Name</div>
+      div {
+        background-color:green;
+      }
+
+      div.name {
+        background-color:red; // uses this
+      }
+
+      3. Id is more specific than class so id is picked
+
+      <div class="name" id="myId">Name</div>
+      div.name {
+        background-color:green;
+      }
+
+      div#myId {
+        background-color:red; // uses this
+      }
+
+      4. !important; forces browser to use this style no matter what
+
+3. How to align a block element inside another element
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <style>
+      .out {
+        width:400px;
+        height:400px;
+        background-color: yellow;
+
+        /* first */
+        position:relative;
+      }
+      .in {
+        width:100px;
+        height:100px;
+        background-color: green;
+
+        /* second */
+        position:absolute;
+
+        /* third - allows the box to have the top left cornder in the center */
+        top:50%;
+        left:50%;
+
+        /* fourth - Adjust */
+        transform:translate(-50%, -50%);
+      }
+    </style>
+    <title>title</title>
+  </head>
+  <body>
+    <div class="out">
+      <div class="in">
+      </div>
+    </div>
+  </body>
+</html>
+
+4. Difference between Static, Relative, Absolute, and Fixed position
+    static: Default in nature to its order
+    relative: in reference to itself
+    absolute: in reference to its parent container
+    fixed: stays where ever it is in the page
+
+5. Difference between visibility:hidden and display:none
+
+visibility:hidden - The element is still in the DOM but no being displayed, will show a gap between other surrounding elements
+display:none - Completely remove it from the DOM and will not be displayed
